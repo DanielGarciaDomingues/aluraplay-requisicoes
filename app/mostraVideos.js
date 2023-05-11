@@ -27,5 +27,3 @@ async function montaCatalogo(){
 }
 
 montaCatalogo();
-
-console.log("merda")
