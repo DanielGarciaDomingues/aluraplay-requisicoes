@@ -2,7 +2,7 @@ import { conectaApi } from "./conectaApi.js";
 
 const catalogo = document.querySelector("[data-lista]");
 
-function constroeCard(titulo, descricao, url, imagem){
+export default function constroeCard(titulo, descricao, url, imagem){
 const video = document.createElement("li")
 video.className = "videos__item" 
 video.innerHTML = `
@@ -21,9 +21,13 @@ video.innerHTML = `
 
 
 async function montaCatalogo(){
+    try{
     const listaApi = await conectaApi.listaVideos();
-    console.log(listaApi)
+    //console.log(listaApi)
     listaApi.forEach(element => catalogo.appendChild(constroeCard(element.titulo, element.descricao, element.url, element.imagem)));
+    } catch {
+    catalogo.innerHTML= `<h2 class="mensagem__titulo">Não foi possivel carregar a lista de videos</h2>`
+    }
 }
 
 montaCatalogo();

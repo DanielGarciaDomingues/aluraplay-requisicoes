@@ -1,0 +1,41 @@
+ - carregamento lista:
+ 	```
+ 	async function montaCatalogo(){
+ 	   try{
+ 	   const listaApi = await conectaApi.listaVideos();
+ 	   listaApi.forEach(element => catalogo.appendChild(constroeCard(element.titulo, element.descricao, element.url, element.imagem)));
+    		} catch {
+    	catalogo.innerHTML= `<h2 class="mensagem__titulo">Não foi possivel carregar a lista de videos</h2>`
+    		}
+	}
+ 	``` 
+ 	
+ - inserção de videos
+  	``` 
+ 	async function criaVideo(titulo, url, imagem){...
+ 	if(!conexao.ok){
+          throw new Error('Não foi possivel carregar o video')
+	    
+    }
+    	async function upForm (evento){...
+        	try{
+	    await conectaApi.criaVideo(titulo, url, imagem)
+	    window.location.href = "../pages/envio-concluido.html"
+	}catch(e){
+	    alert(e)
+	}
+ 
+  	``` 
+ 
+ - filtro de videos (string null, string not found)
+  	``` 
+	async function pVideo(evento){...
+	        if(dadosPesquisa.length == 0){
+		  lista.innerHTML = `<h2 class="mensagem__titulo">Comece inserindo dados na sua pesquisa</h2>`
+	        }
+	        if(!lista.firstChild){
+	        lista.innerHTML = `<h2 class="mensagem__titulo">Nenhum resultado foi encontrado</h2>`
+	    }} 
+	 
+ ] 	``` 
+ 
