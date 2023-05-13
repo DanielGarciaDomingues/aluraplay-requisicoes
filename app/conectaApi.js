@@ -8,7 +8,7 @@ async function listaVideos(){
 }
 
 
-async function criaVideo(titulo, url, imagem){
+async function criaVideo(titulo, url, imagem, descricao){
     const conexao = await fetch("https://servidor-alura-requisicoes.vercel.app/videos",{
         method: "POST",
         headers: {
@@ -18,7 +18,7 @@ async function criaVideo(titulo, url, imagem){
             titulo: titulo,
             url: url,
             imagem: imagem,
-            descricao: `${Math.floor(Math.random()*10).toString()} mil visualizações`,
+            descricao: descricao,
         })
     })
     if(!conexao.ok){
