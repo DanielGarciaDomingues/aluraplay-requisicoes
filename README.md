@@ -17,3 +17,18 @@
 ## Screenshots
 ![Screenshot da tela inicial do AluraPlay](https://imgur.com/aymxEsh.png)
 ![Screenshot da tela do formulário do AluraPlay](https://imgur.com/ShNADf2.png)
+
+## Servidor teste em desenvolvimento
+
+* Vercel: 
+    * https://servidor-alura-requisicoes.vercel.app/videos
+* Git-hub:
+    * https://github.com/DanielGarciaDomingues/servidor-alura-requisicoes/
+
+    ### Resolução de Bugs
+
+        * Bug: Método POST retorna erro 500.
+        * Descrição: Ao enviar o formulário de cadastro de vídeos, ocorre um erro interno do servidor com status 500.
+        * Solução: Investigar e corrigir o erro no código responsável pelo tratamento da requisição POST e persistência dos dados no servidor.
+
+ 
