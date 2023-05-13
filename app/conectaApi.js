@@ -1,15 +1,15 @@
+//host vercel 
 
-
-// "http://localhost:3000/videos"
+// "http://localhost:3000/videos" mock server
 async function listaVideos(){
-    const conexao = await fetch("http://localhost:3000/videos");
+    const conexao = await fetch("https://servidor-alura-requisicoes.vercel.app/videos");
     const conexaoConvertida = await conexao.json();
     return conexaoConvertida
 }
 
 
 async function criaVideo(titulo, url, imagem){
-    const conexao = await fetch("http://localhost:3000/videos",{
+    const conexao = await fetch("https://servidor-alura-requisicoes.vercel.app/videos",{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -28,7 +28,7 @@ async function criaVideo(titulo, url, imagem){
         return conexaoConvertida
     }
 async function pesquisaVideo(string){
-    const conexao = await fetch(`http://localhost:3000/videos?q=${string}`)
+    const conexao = await fetch(`https://servidor-alura-requisicoes.vercel.app/videos?q=${string}`)
     const conexaoConvertida = await conexao.json()
     return conexaoConvertida
 }
